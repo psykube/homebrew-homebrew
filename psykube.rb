@@ -24,3 +24,4 @@ class Psykube < Formula
     system 'shards build --release'
     bin.install "bin/psykube"
   end
+end
