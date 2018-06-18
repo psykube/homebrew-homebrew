@@ -19,7 +19,6 @@ class Psykube < Formula
   depends_on 'bdw-gc'
 
   def install
-    Language::Node.std_npm_install_args(libexec)
     ENV["TRAVIS_TAG"] = TAG unless build.head?
     system 'shards build --release'
     bin.install "bin/psykube"
