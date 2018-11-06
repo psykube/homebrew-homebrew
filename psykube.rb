@@ -20,7 +20,7 @@ class Psykube < Formula
 
   def install
     ENV["TRAVIS_TAG"] = TAG unless build.head?
-    system 'shards build --release'
+    system 'shards build --production'
     bin.install "bin/psykube"
   end
 end
