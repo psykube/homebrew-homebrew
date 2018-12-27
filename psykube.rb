@@ -13,8 +13,7 @@ class Psykube < Formula
   url 'https://github.com/psykube/psykube.git', using: :git, tag: TAG
 
   depends_on 'crystal-lang' => :build
-  depends_on 'openssl' => :build
-  depends_on 'node' => :build
+  depends_on 'openssl'
   depends_on 'kubernetes-cli'
   depends_on 'bdw-gc'
 
