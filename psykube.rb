@@ -3,8 +3,7 @@ require "formula"
 
 class Psykube < Formula
   LATEST_RELEASE = JSON.parse(Net::HTTP.get(URI("https://api.github.com/repos/psykube/psykube/releases/latest")))
-  FALLBACK_TAG = "v1.9.3.0"
-  TAG = LATEST_RELEASE["tag_name"] || FALLBACK_TAG
+  TAG = LATEST_RELEASE["tag_name"] || "unknown"
 
   version TAG.sub /^v/, ''
   homepage 'https://github.com/psykube/psykube'
