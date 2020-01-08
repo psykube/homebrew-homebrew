@@ -3,9 +3,9 @@ require "formula"
 
 class Psykube < Formula
   LATEST_RELEASE = JSON.parse(Net::HTTP.get(URI("https://api.github.com/repos/psykube/psykube/releases/latest")))
-  TAG = LATEST_RELEASE["tag_name"] || "unknown"
+  TAG = LATEST_RELEASE && LATEST_RELEASE["tag_name"]
 
-  version TAG.sub /^v/, ''
+  version TAG&.sub /^v/, ''
   homepage 'https://github.com/psykube/psykube'
   head 'https://github.com/psykube/psykube.git', branch: 'master'
   url 'https://github.com/psykube/psykube.git', using: :git, tag: TAG
