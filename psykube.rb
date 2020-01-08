@@ -1,6 +1,5 @@
 require "net/http"
 require "formula"
-require "language/node"
 
 class Psykube < Formula
   LATEST_RELEASE = JSON.parse(Net::HTTP.get(URI("https://api.github.com/repos/psykube/psykube/releases/latest")))
