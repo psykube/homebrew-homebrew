@@ -2,8 +2,7 @@ require "net/http"
 require "formula"
 
 class Psykube < Formula
-  LATEST_RELEASE = JSON.parse(Net::HTTP.get(URI("https://api.github.com/repos/psykube/psykube/releases/latest")))
-  TAG = LATEST_RELEASE && LATEST_RELEASE["tag_name"]
+  TAG = JSON.parse(Net::HTTP.get(URI("https://api.github.com/repos/psykube/psykube/tags?per_page=1"))).first["name"]
 
   version TAG&.sub /^v/, ''
   homepage 'https://github.com/psykube/psykube'
